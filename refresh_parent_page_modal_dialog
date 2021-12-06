@@ -1,0 +1,30 @@
+Introduction:
+Refresh the Parent Page on Closing the Modal Dialog in Oracle APEX..
+The User has a requirement to refresh the Parent Page Interactive region on closing the Modal Dialog.
+
+How do we solve:
+The below are the steps to refresh the Parent Page on Closing the Dialog.
+
+Steps:
+Consider the Modal Page – Page No.11
+Parent Page with Interactive Report – Page No. 7
+Include the below script in a Modal Page Attribute Column
+
+close: function(event, ui) {apex.navigation.dialog.close(true,{dialogPageId:11});}
+
+Include the below script in a Parent Page
+
+Create a new dynamic Action
+Event – Dialog Closed
+Selection type – JavaScript Expression
+JavaScript Expression – window
+In Client Side Condition set type as “JavaScript Expression” and include the below Script in the Expression.
+
+this.browserEvent != “load” && this.data.dialogPageId == “11”
+
+On True Action, set Action as “Refresh”.
+
+1) Selection Type – Region
+
+2) Region – Interactive Report Region
+https://doyensys.com/blogs/refresh-the-parent-page-on-closing-the-modal-dialog-in-oracle-apex/

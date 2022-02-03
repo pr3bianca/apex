@@ -1,0 +1,2 @@
+Get value from IG selected row
+this.data.model.getValue(this.data.selectedRecords[0], "FIELD_NAME");

@@ -1,0 +1,7 @@
+Create dynamic action on page load
+var vRegion$ = $(this.triggeringElement);
+vRegion$.setTableHeadersAsFixed();
+vRegion$.find('.js-stickyTableHeader').stickyWidget();
+
+ADD in page Javascript FileURL´s
+#IMAGE_PREFIX#libraries/apex/#MIN_DIRECTORY#widget.stickyTableHeader#MIN#.js?=v=#APEX_VERSION#

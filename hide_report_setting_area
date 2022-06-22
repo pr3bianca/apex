@@ -1,0 +1,5 @@
+set static id on report
+ex: relatorio
+
+in page css (in line) put
+#relatorio_control_panel{display:none;}

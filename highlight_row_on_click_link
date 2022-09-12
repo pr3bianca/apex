@@ -1,0 +1,27 @@
+Oracle Apex: Highlight Row on Link Click of Interactive Report / Classic report
+
+<b>1. Create a JavaScript function.</b>
+Add the following JavaScript code to the page having Interactive Report. Click on the Page then in the property palette, JavaScript > Function and Global Variable Declaration. Paste the following JavaScript function code in Function and Global Variable Declaration section:
+
+function irRowhighLight( pThis ){
+  $('td').removeClass('currentrow');
+  $(pThis).parent().parent().children().addClass('currentrow') ;  
+  var v_row = $(pThis).parent().next().html();
+}
+
+<b>2. Add the CSS to the page.</br>
+Click on the Page then in the property palette, CSS > Inline. Paste the following CSS code in the Inline section:
+
+.currentrow
+{ 
+ background-color: #eeeeee !important;
+}
+
+<b>3. Set Link Attribute for the Link.<b>
+Now select the column and set the type to Link. In the property palette, set the target for the link in the Link section and for the Link Attribute property, add the following code:
+
+onclick=irRowhighLight(this);
+
+It is done now. Save the changes and run the report to test. When you will click on the link the current row of the interactive report will be highlighted.
+
+all rights to https://www.foxinfotech.in/2019/10/oracle-apex-highlight-row-on-link-click-of-interactive-report.html
